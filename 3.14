@@ -1,0 +1,5 @@
+Requirement already satisfied: djangorestframework in c:\users\newa\desktop\uhp\venv\lib\site-packages (3.16.1)
+Requirement already satisfied: django>=4.2 in c:\users\newa\desktop\uhp\venv\lib\site-packages (from djangorestframework) (6.0.1)
+Requirement already satisfied: asgiref>=3.9.1 in c:\users\newa\desktop\uhp\venv\lib\site-packages (from django>=4.2->djangorestframework) (3.11.0)
+Requirement already satisfied: sqlparse>=0.5.0 in c:\users\newa\desktop\uhp\venv\lib\site-packages (from django>=4.2->djangorestframework) (0.5.5)
+Requirement already satisfied: tzdata in c:\users\newa\desktop\uhp\venv\lib\site-packages (from django>=4.2->djangorestframework) (2025.3)
