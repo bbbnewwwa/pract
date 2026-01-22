@@ -7,3 +7,10 @@ class Service(models.Model):
     duration_minutes = models.PositiveIntegerField('Длительность (мин)', default=30)
     image = models.ImageField('Изображение', upload_to='services/', blank=True, null=True)
     is_active = models.BooleanField('Активна', default=True)
+
+    class Meta:
+        verbose_name = 'Услуга'
+        verbose_name_plural = 'Услуги'
+
+    def __str__(self):
+        return f"{self.name} — {self.price} ₽"
