@@ -17,3 +17,15 @@ class ServiceAdmin(admin.ModelAdmin):
 class AppointmentAdmin(admin.ModelAdmin):
     list_display = ('client', 'master', 'service', 'datetime', 'status', 'total_amount')
     list_filter = ('status', 'datetime')
+
+@admin.register(Order)
+class OrderAdmin(admin.ModelAdmin):
+    list_display = ('appointment', 'total_amount', 'payment_method', 'date')
+
+@admin.register(Review)
+class ReviewAdmin(admin.ModelAdmin):
+    list_display = ('client', 'master', 'rating', 'date')
+
+@admin.register(Promotion)
+class PromotionAdmin(admin.ModelAdmin):
+    list_display = ('name', 'discount_percent', 'start_date', 'end_date')
