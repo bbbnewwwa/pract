@@ -2,7 +2,11 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+import os
+from pathlib import Path
 
+LOGS_DIR = Path(__file__).resolve().parent / 'beauty_studio' / 'logs'
+LOGS_DIR.mkdir(exist_ok=True)
 
 def main():
     """Run administrative tasks."""
