@@ -7,3 +7,20 @@ from .serializers import (
     ClientSerializer, MasterSerializer, ServiceSerializer,
     AppointmentSerializer, OrderSerializer, ReviewSerializer, PromotionSerializer
 )
+class ClientViewSet(viewsets.ModelViewSet):
+    queryset = Client.objects.all()
+    serializer_class = ClientSerializer
+
+class MasterViewSet(viewsets.ModelViewSet):
+    queryset = Master.objects.all()
+    serializer_class = MasterSerializer
+
+class ServiceViewSet(viewsets.ModelViewSet):
+    queryset = Service.objects.all()
+…class ReviewViewSet(viewsets.ModelViewSet):
+    queryset = Review.objects.all()
+    serializer_class = ReviewSerializer
+
+class PromotionViewSet(viewsets.ModelViewSet):
+    queryset = Promotion.objects.all()
+    serializer_class = PromotionSerializer
