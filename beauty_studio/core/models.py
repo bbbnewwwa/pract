@@ -50,3 +50,19 @@ class Appointment(models.Model):
     status = models.CharField('Статус', max_length=20, choices=STATUS_CHOICES, default='scheduled')
     total_amount = models.DecimalField('Сумма', max_digits=10, decimal_places=2)
 
+    def __str__(self):
+        return f"{self.client} → {self.master} ({self.datetime})"
+
+class Order(models.Model):
+    PAYMENT_METHODS = [
+        ('cash', 'Наличные'),
+        ('card', 'Карта'),
+        ('online', 'Онлайн'),
+    ]
+    appointment = models.OneToOneField(Appointment, on_delete=models.CASCADE, verbose_name='Запись')
+    total_amount = models.DecimalField('Общая сумма', max_digits=10, decimal_places=2)
+    payment_method = models.CharField('Способ оплаты', max_length=20, choices=PAYMENT_METHODS)
+    date = models.DateTimeField('Дата заказа', auto_now_add=True)
+
+    def __str__(self):
+        return f"Чек #{self.id} — {self.total_amount} ₽"
