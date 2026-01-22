@@ -1,8 +1,8 @@
 __pycache__/
 *.pyc
-db.sqlite3
+*.sqlite3
 .env
 venv/
-.env.local
 media/
-.DS_Store
+staticfiles/
+logs/
