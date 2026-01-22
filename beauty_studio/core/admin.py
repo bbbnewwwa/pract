@@ -8,3 +8,12 @@ class ClientAdmin(admin.ModelAdmin):
 @admin.register(Master)
 class MasterAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'specialization', 'commission_percent')
+
+@admin.register(Service)
+class ServiceAdmin(admin.ModelAdmin):
+    list_display = ('name', 'category', 'price', 'duration_minutes')
+
+@admin.register(Appointment)
+class AppointmentAdmin(admin.ModelAdmin):
+    list_display = ('client', 'master', 'service', 'datetime', 'status', 'total_amount')
+    list_filter = ('status', 'datetime')
