@@ -76,3 +76,13 @@ class Review(models.Model):
 
     def __str__(self):
         return f"Отзыв от {self.client} — {self.rating}"
+
+class Promotion(models.Model):
+    name = models.CharField('Название акции', max_length=100)
+    description = models.TextField('Описание')
+    discount_percent = models.DecimalField('Скидка (%)', max_digits=5, decimal_places=2)
+    start_date = models.DateField('Начало')
+    end_date = models.DateField('Окончание')
+
+    def __str__(self):
+        return f"{self.name} — {self.discount_percent}%"
