@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    ...
-  </head>
-  <body>
-    ...
-  </body>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Beauty Studio{% endblock %}</title>
+    <!-- Подключение статики -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
 </html>
