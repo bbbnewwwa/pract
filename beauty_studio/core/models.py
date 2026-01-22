@@ -27,3 +27,13 @@ commission_percent = models.DecimalField('Процент от услуг', max_d
 def __str__(self):
         return f"{self.full_name} ({self.get_specialization_display()})"
 
+class Service(models.Model):
+    CATEGORIES = Master.SPECIALIZATIONS
+    name = models.CharField('Название', max_length=100)
+    category = models.CharField('Категория', max_length=20, choices=CATEGORIES)
+    duration_minutes = models.PositiveIntegerField('Длительность (мин)')
+    price = models.DecimalField('Стоимость', max_digits=10, decimal_places=2)
+
+    def __str__(self):
+        return f"{self.name} — {self.price} ₽"
+
