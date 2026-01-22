@@ -25,3 +25,9 @@ class PromotionViewSet(viewsets.ModelViewSet):
     queryset = Promotion.objects.all()
     serializer_class = PromotionSerializer
 
+@api_view(['GET'])
+def appointments_today(request):
+    today = timezone.now().date()
+    appointments = Appointment.objects.filter(datetime__date=today)
+    serializer = AppointmentSerializer(appointments, many=True)
+    return Response(serializer.data)
