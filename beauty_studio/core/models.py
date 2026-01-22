@@ -8,3 +8,12 @@ class Client(models.Model):
 
     def __str__(self):
         return self.full_name
+
+class Master(models.Model):
+    SPECIALIZATIONS = [
+        ('nails', 'Ногти'),
+        ('lashes', 'Ресницы'),
+        ('brows', 'Брови'),
+        ('hair', 'Парикмахер'),
+        ('cosmetology', 'Косметология'),
+    ]
