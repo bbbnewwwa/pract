@@ -66,3 +66,13 @@ class Order(models.Model):
 
     def __str__(self):
         return f"Чек #{self.id} — {self.total_amount} ₽"
+
+class Review(models.Model):
+    client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    master = models.ForeignKey(Master, on_delete=models.CASCADE)
+    rating = models.PositiveSmallIntegerField('Оценка', choices=[(i, i) for i in range(1, 6)])
+    text = models.TextField('Текст отзыва', blank=True)
+    date = models.DateTimeField('Дата', auto_now_add=True)
+
+    def __str__(self):
+        return f"Отзыв от {self.client} — {self.rating}"
