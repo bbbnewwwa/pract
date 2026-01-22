@@ -37,3 +37,16 @@ class Service(models.Model):
     def __str__(self):
         return f"{self.name} — {self.price} ₽"
 
+class Appointment(models.Model):
+    STATUS_CHOICES = [
+        ('scheduled', 'Запланировано'),
+        ('completed', 'Выполнено'),
+        ('cancelled', 'Отменено'),
+    ]
+    client = models.ForeignKey(Client, on_delete=models.CASCADE, verbose_name='Клиент')
+    master = models.ForeignKey(Master, on_delete=models.CASCADE, verbose_name='Мастер')
+    service = models.ForeignKey(Service, on_delete=models.CASCADE, verbose_name='Услуга')
+    datetime = models.DateTimeField('Дата и время')
+    status = models.CharField('Статус', max_length=20, choices=STATUS_CHOICES, default='scheduled')
+    total_amount = models.DecimalField('Сумма', max_digits=10, decimal_places=2)
+
