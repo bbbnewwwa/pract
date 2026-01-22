@@ -31,3 +31,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'beauty_studio.urls'
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR / 'templates'],  # шаблоны будут в frontend, но подключим позже
+        'APP_DIRS': True,
+    }
+]
