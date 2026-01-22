@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Beauty Studio{% endblock %}</title>
+    <!-- Подключение статики -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Beauty Studio</h1>
+             <nav>
+                <a href="{% url 'services' %}">Услуги</a>
+                <a href="{% url 'contacts' %}">Контакты</a>
+                <a href="https://t.me/hot_beauty_studio_bot" target="_blank">Записаться в Telegram</a>
+             </nav>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Beauty Studio. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>
